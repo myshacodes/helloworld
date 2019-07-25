@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shopping List</title>
-    <title>z</title>
+    <title>Timers</title>
+    <style>
+      #number {
+        font-size: 24px;
+      }
+    </style>
   </head>
+  <body>
+    <div id="number"></div>
+    <script>
+      var count = 0;
+      function updateCount() {
+        count = count + 1;
+        document.getElementById("number").innerHTML = count;
+        setTimeout(updateCount, 1000);
+      }
+
+      updateCount();
+    </script>
+  </body>
 </html>
