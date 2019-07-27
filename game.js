@@ -15,10 +15,11 @@ function gameLoop() {
 function flashCharacters() {
   var board = document.getElementById("board");
   var classToSet = "";
-   if (charactersVisible) {
-     classToSet = "character visible"
-   }
-  else {
-    classToSet = "chracter hidden";
-  }
+  var classToSet = charactersVisible ? "character visible" : "character hidden";
 }
+for (var index = 0; index < 6; index++) {
+  board.children[index].className = classToSet;
+}
+var loops = 0;
+var people = false;
+var gameScore = 0;
