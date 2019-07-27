@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Spot the Fox!</title>
+    <title>Spot the Thief!</title>
     <style>
       #board {
         border: 1px solid black;
-        background: lemonchiffon;
-        width: 650px;
-        height: 350px;
+        background: url("images/GameBackground.jpg");
+        width: 990px;
+        height: 590px;
       }
       .character {
-        background-color: cornflowerblue;
-        width: 120px;
-        height: 120px;
+        background: url("images/Guest.jpg");
+        background-size: cover;
+        width: 170px;
+        height: 170px;
         padding: 10px;
         margin: 10px;
         float: left;
+        display: none;
+      }
+
+      .thief {
+        background: url("images/Thief.jpg");
+        background-size: cover;
       }
       .hidden {
         display: none;
@@ -34,25 +41,11 @@
       <div class="character">4</div>
       <div class="character">5</div>
       <div class="character">6</div>
-      <div class="character">7</div>
-      <div class="character">8</div>
     </div>
-    <script>
-      function startGame() {
-        gameLoop();
-      }
-      var loops = 0;
-      var characterVisible = false;
-      function gameLoop() {
-        characterVisible = !characterVisible;
-        flashCharacters();
-        loops++;
-        if ((loops = 12)) {
-          setTimeout(gameLoop, 3000);
-        } else {
-          alert("Game over!");
-        }
-      }
-    </script>
+    <dialog
+      >Please refresh the page before you play again to reduce chances of
+      bugs!</dialog
+    >
+    <script src="game.js"></script>
   </body>
 </html>
